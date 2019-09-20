@@ -36,3 +36,10 @@ exportData = {"Spring":
              "Autumn":
              }
 ```
+
+## usage
+```sh
+$ git clone git@github.com:umncsk/scheduller.git
+$ cd scheduller
+$ pip install -r requirements.txt
+```
