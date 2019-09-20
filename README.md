@@ -1,17 +1,17 @@
-# univ-scraping-remake
+# scheduller
 
-## リファレンス  
+## references
 <https://docs.djangoproject.com/ja/2.2/intro/tutorial01/>
 
-## 使い方  
+## usage
 - 組織の作成
   1. 登録フォームより任意のIDを登録、作成
 - 組織への参加
   1. 参加する組織のID、本人の学籍番号、パスワード(ToyoNet-G)を入力  
 
-## 仕様
+## specification
 
-  **データべース構造**
+  **databases**
 ```
 table test(id char primary key,
 team_id integer,
@@ -37,9 +37,10 @@ exportData = {"Spring":
              }
 ```
 
-## usage
+## installation
 ```sh
 $ git clone git@github.com:umncsk/scheduller.git
 $ cd scheduller
 $ pip install -r requirements.txt
 ```
+
