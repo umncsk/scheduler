@@ -15,8 +15,8 @@ def get_user_schedule(id, pswd):
     time.sleep(1)
 
     # login process
-    useridElement = driver.find_element_by_name("j_username")
-    passwordElement = driver.find_element_by_name("j_password")
+    useridElement = driver.find_element_by_name("userid")
+    passwordElement = driver.find_element_by_name("password")
     loginElement = driver.find_element_by_name("login")
     useridElement.send_keys(id)
     passwordElement.send_keys(pswd)
