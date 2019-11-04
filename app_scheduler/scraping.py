@@ -36,5 +36,5 @@ def get_user_schedule(id, pswd):
                 schedule_binary += "1"
             else:
                 schedule_binary += "0"
-
+    # 8 binary per 1 day
     return schedule_binary

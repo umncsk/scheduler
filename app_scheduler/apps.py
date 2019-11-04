@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class App_SchedulerConfig(AppConfig):
+class AppSchedulerConfig(AppConfig):
     name = 'app_scheduler'
