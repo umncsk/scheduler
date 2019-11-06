@@ -1,5 +1,16 @@
 # scheduller
 
+## start this project
+Install dependent libraries in pipenv
+`pipenv install`
+Start virtual environment
+`pipenv shell`
+stop virtual environment
+`deactivate` `exit`
+
+## add new library
+`pipenv install <library_name>`
+
 ## references
 <https://docs.djangoproject.com/ja/2.2/intro/tutorial01/>
 
@@ -36,11 +47,3 @@ exportData = {"Spring":
              "Autumn":
              }
 ```
-
-## installation
-```sh
-$ git clone git@github.com:umncsk/scheduller.git
-$ cd scheduller
-$ pip install -r requirements.txt
-```
-
