@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     "bootstrap4",
-    "app_scheduler",
+    "app_scheduler.apps.AppSchedulerConfig",
 ]
 
 REST_FRAMEWORK = {

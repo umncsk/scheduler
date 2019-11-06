@@ -5,6 +5,8 @@ class User(models.Model):
     organization  = models.ForeignKey("Organization", to_field='team_id', on_delete=models.SET_NULL, null=True)
     user_name     = models.CharField(max_length=256, null=False)
     user_pswd     = models.CharField(max_length=256, null=False)
+    student_id    = models.CharField(max_length=20, null=False)
+    student_pswd  = models.CharField(max_length=256, null=False)
     user_schedule = models.CharField(max_length=256)
 
 class Organization(models.Model):
