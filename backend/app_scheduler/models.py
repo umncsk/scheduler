@@ -7,8 +7,23 @@ class User(models.Model):
     user_pswd     = models.CharField(max_length=256, null=False)
     student_id    = models.CharField(max_length=20, null=False)
     student_pswd  = models.CharField(max_length=256, null=False)
-    user_schedule = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.student_id
+
+
+class Schedule(models.Model):
+    student_id = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    schedule = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.schedule
+
 
 class Organization(models.Model):
     team_id = models.CharField(max_length=256, primary_key=True)
     team_schedule = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.team_schedule
+

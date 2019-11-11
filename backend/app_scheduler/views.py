@@ -6,12 +6,21 @@ from django.views.decorators.csrf import csrf_exempt
 
 # Django Rest Framework views
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, generics
 from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from app_scheduler.models import User
 from app_scheduler.serializers import UserSerializer
+
+class UserSchedule(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class DetailSchedule(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
 
 class UserViewSet(viewsets.ModelViewSet):
     """
