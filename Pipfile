@@ -12,6 +12,8 @@ pandas = "*"
 numpy = "~=1.17"
 selenium = "*"
 django-bootstrap4 = "*"
+chromedriver-binary = "==78.0.3904.70.0"
+lxml = "*"
 
 [requires]
 python_version = "3.8"
