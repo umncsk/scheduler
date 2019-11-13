@@ -1,4 +1,5 @@
 from selenium import webdriver
+import chromedriver_binary
 import datetime
 import time
 import pandas
@@ -8,7 +9,7 @@ def get_user_schedule(id, pswd):
     # initialize selenium
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
-    driver = webdriver.Chrome("Drivers/chromedriver.exe", options=options)
+    driver = webdriver.Chrome(options=options)
 
     # page access
     driver.get("https://www.ace.toyo.ac.jp/ct/home")
@@ -26,7 +27,7 @@ def get_user_schedule(id, pswd):
     # get page source as html
     html = driver.page_source
 
-    data = pandas.io.html.read_html(html)[1].isnull()
+    data = pandas.io.html.read_html(html)[2].isnull()
 
     data = data.iloc[:, 1:]
     schedule_binary = ""
