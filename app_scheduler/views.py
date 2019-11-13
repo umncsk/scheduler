@@ -73,3 +73,22 @@ def user_detail(request, pk):
     elif request.method == 'DELETE':
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+"""
+# user create function
+User = get_user_model()
+
+class UserDataInput(generic.FormView):
+    template_name = "user_registration.html"
+    form_class = UserRegistrationForm
+
+    def form_valid(self, form):
+        return render(self.request, "user_registration.html", { "form": form })
+
+    def form_invalid(self, form):
+        return render(self.request, "user_registration.html", { "form": form })
+
+class UserDataCreate(generic.CreateView):
+    form_class = UserRegistrationForm
+    success_url = reverse_lazy("register:user_list")
+"""
