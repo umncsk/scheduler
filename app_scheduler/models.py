@@ -10,12 +10,12 @@ class User(models.Model):
     user_schedule = models.CharField(max_length=256)
 
     def __str__(self):
-        return self.user_schedule
+        return self.student_id
 
 class Organization(models.Model):
     team_id = models.CharField(max_length=256, primary_key=True)
     team_schedule = models.CharField(max_length=256)
 
     def __str__(self):
-        return self.team_schedule
+        return self.team_id
 
