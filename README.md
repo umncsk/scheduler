@@ -1,5 +1,7 @@
 # Easy scheduling API tool for Toyo University students
 ![](https://github.com/umncsk/scheduler/.github/workflows/pythonapp.yml/badge.svg)
+講義データを抜きとるぞい!
+
 ## Getting start this project
 ### Using virtual environment with pipenv
 Install dependent libraries in pipenv.
