@@ -15,8 +15,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         student_id = validated_data.get('student_id')
         student_pswd = validated_data.get('student_pswd')
         user_schedule = get_user_schedule(student_id, student_pswd)
-        print(student_id, student_pswd)
-        print(user_schedule)
         validated_data['user_pswd'] = make_password(user_pswd)
         validated_data['student_pswd'] = make_password(student_pswd)
         validated_data['user_schedule'] = user_schedule
