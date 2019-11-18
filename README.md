@@ -1,5 +1,6 @@
 # Easy scheduling API tool for Toyo University students
-![](https://github.com/umncsk/scheduler/.github/workflows/pythonapp.yml/badge.svg)
+[![Actions Status](https://github.com/umncsk/scheduler/workflows/Python%20application/badge.svg)](https://github.com/umncsk/scheduler/actions)
+
 講義データを抜きとるぞい!
 
 ## Getting start this project
