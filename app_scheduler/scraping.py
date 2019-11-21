@@ -9,6 +9,7 @@ def get_user_schedule(id, pswd):
     # initialize selenium
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
+    #if can not import chromedriver_binary, add executable path to chromedriver
     driver = webdriver.Chrome(options=options)
 
     # page access
