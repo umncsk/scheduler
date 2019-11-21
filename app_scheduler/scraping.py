@@ -1,6 +1,5 @@
 from selenium import webdriver
 import chromedriver_binary
-import datetime
 import time
 import pandas
 
