@@ -1,5 +1,6 @@
 # Easy scheduling API tool for Toyo University students
 [![Actions Status](https://github.com/umncsk/scheduler/workflows/Python%20application/badge.svg)](https://github.com/umncsk/scheduler/actions)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/umncsk/scheduler.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/umncsk/scheduler/context:python)
 
 講義データを抜きとるぞい!
 
