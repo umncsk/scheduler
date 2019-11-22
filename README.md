@@ -23,3 +23,15 @@ About chromedriver dependency
 
 `pipenv install chromedriver-binary==<your_current_chrome_version>`
 
+#### custom commands
+run server
+`pipenv run server`
+
+makemigrations
+`pipenv run makemigrations`
+
+migrate
+`pipenv run migrate`
+
+createsuperuser
+`pipenv run createsuperuser`
