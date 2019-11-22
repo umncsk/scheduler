@@ -6,24 +6,36 @@
 
 ## Getting start this project
 ### Using virtual environment with pipenv
-Install dependent libraries in pipenv.
+#### Install dependent libraries in pipenv.
 `pipenv install`
 
-Start virtual environment
+#### Start virtual environment
 `pipenv shell`
 
-Stop virtual environment
+#### Stop virtual environment
 `deactivate` & `exit`
 
-Add new library
+#### Add new library
 `pipenv install <library_name>`
 
-About chromedriver dependency
+### About chromedriver dependency
 > install chromedriver-binary with version definition as manually
 
 `pipenv install chromedriver-binary==<your_current_chrome_version>`
 
-#### custom commands
+### Check your chrome version
+#### macOS terminal
+```console
+$ /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
+```
+
+#### Windows PowerShell 
+maybe...
+```console
+$ reg query "HKEY_CURRENT_USER\Software\Google\Chrome\BLBeacon" /v version
+```
+
+#### env custom commands
 run server
 `pipenv run server`
 

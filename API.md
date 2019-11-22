@@ -4,7 +4,7 @@ Use your ToyoNet-Ace id and password.
 ### URLs
 #### `localhost:8000/admin`
 
-#### `localhost:8000/`
+#### GET `localhost:8000/`
 all users list
 ```json
 {
@@ -22,6 +22,23 @@ all users list
     ]
 }
 ```
-
+#### POST `localhost:8000/
+user registration
+```json
+{
+    "user_name": [
+        "この項目は必須です。"
+    ],
+    "user_pswd": [
+        "この項目は必須です。"
+    ],
+    "student_id": [
+        "この項目は必須です。"
+    ],
+    "student_pswd": [
+        "この項目は必須です。"
+    ]
+}
+```
 #### `localhost:8000/users`
 #### `localhost:8000/user/<pk>`
