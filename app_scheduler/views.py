@@ -13,28 +13,22 @@ from rest_framework.response import Response
 from app_scheduler.models import User
 from app_scheduler.serializers import UserSerializer
 
-class UserSchedule(generics.ListCreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
 class DetailSchedule(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-    queryset = User.objects.all().order_by('-date_joined')
+    # API endpoint that allows users to be viewed or edited.
+    # queryset = User.objects.all().order_by('-date_joined')
+    queryset = User.objects.all()
     serializer_class = UserSerializer
 
+"""
 @csrf_exempt
 @api_view(['GET', 'POST'])
 def user_list(request):
-    """
-    List all users, or create a new user.
-    """
+    # List all users, or create a new user.
     if request.method == 'GET':
         users = User.objects.all()
         serializer = UserSerializer(users, many=True)
@@ -51,9 +45,7 @@ def user_list(request):
 @csrf_exempt
 @api_view(['GET', 'PUT', 'DELETE'])
 def user_detail(request, pk):
-    """
-    Retrieve, update or delete a user.
-    """
+    # Retrieve, update or delete a user.
     try:
         user = User.objects.get(pk=pk)
     except User.DoesNotExist:
@@ -73,5 +65,4 @@ def user_detail(request, pk):
     elif request.method == 'DELETE':
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
-    
+"""

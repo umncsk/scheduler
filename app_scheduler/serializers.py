@@ -8,19 +8,20 @@ from app_scheduler.scraping import get_user_schedule
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('user_name', 'user_pswd', 'student_id', 'student_pswd')
+        # touple of fields you want to output
+        fields = ('user_name', 'student_id', 'passwd')
 
     def create(self, validated_data):
-        user_pswd = validated_data.get('user_pswd')
+        user_name = validated_data.get('user_name')
         student_id = validated_data.get('student_id')
-        student_pswd = validated_data.get('student_pswd')
-        user_schedule = get_user_schedule(student_id, student_pswd)
-        validated_data['user_pswd'] = make_password(user_pswd)
-        validated_data['student_pswd'] = make_password(student_pswd)
-        validated_data['user_schedule'] = user_schedule
+        passwd = validated_data.get('passwd')
+        schedule = get_user_schedule(student_id, passwd)
+        validated_data['passwd'] = make_password(passwd)
+        validated_data['schedule'] = schedule
         return User.objects.create(**validated_data)
 
 class OrganizationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Organization
-        fields = ('organization_id', 'team_schedule')
+        # touple of fields you want to output
+        fields = ('organization_id', 'schedule')
