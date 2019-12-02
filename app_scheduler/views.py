@@ -10,13 +10,14 @@ from rest_framework import viewsets, status, generics
 # from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from app_scheduler.models import User
-from app_scheduler.serializers import UserSerializer
+from app_scheduler.models import User, Organization
+from app_scheduler.serializers import UserSerializer, OrganizationSerializer
 
+"""
 class DetailSchedule(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
+"""
 
 class UserViewSet(viewsets.ModelViewSet):
     # API endpoint that allows users to be viewed or edited.
@@ -24,3 +25,7 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+
+class OrganizationViewSet(viewsets.ModelViewSet):
+    queryset = Organization.objects.all()
+    serializer_class = OrganizationSerializer
