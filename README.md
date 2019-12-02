@@ -50,3 +50,7 @@ createsuperuser
 
 run django shell
 `pipenv run shell`
+
+## Background
+This repository is a refactoring of past team development.
+> [TeamProject · GitLab](https://gitlab.com/s1f101701654/TeamProject)
