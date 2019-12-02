@@ -21,7 +21,8 @@ lxml = "*"
 python_version = "3.8"
 
 [scripts]
-server = "python manage.py runserver"
-makemigrations = "python manage.py makemigrations"
-migrate = "python manage.py migrate"
+server          = "python manage.py runserver"
+makemigrations  = "python manage.py makemigrations"
+migrate         = "python manage.py migrate"
 createsuperuser = "python manage.py createsuperuser"
+shell           = "python manage.py shell"
