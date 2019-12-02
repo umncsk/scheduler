@@ -21,8 +21,9 @@ from app_scheduler import views
 # Django Rest Framework routers
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
+router.register(r'organizations', views.OrganizationViewSet)
 
 urlpatterns = [
-    path('api/v1/', include(router.urls)),
+    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
 ]
