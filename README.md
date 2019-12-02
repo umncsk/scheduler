@@ -47,3 +47,6 @@ migrate
 
 createsuperuser
 `pipenv run createsuperuser`
+
+run django shell
+`pipenv run shell`
