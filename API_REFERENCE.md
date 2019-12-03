@@ -1,4 +1,4 @@
-Here is this API usage.
+Here is API reference.
 Use your [ToyoNet-ACE](https://www.ace.toyo.ac.jp/ct/home) ID and password.
 
 ## Usage
