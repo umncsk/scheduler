@@ -1,5 +1,4 @@
-Here is API reference.
-Use your [ToyoNet-ACE](https://www.ace.toyo.ac.jp/ct/home) ID and password.
+Here is API reference. Use your <a href="https://www.ace.toyo.ac.jp/ct/home" target="_blank">ToyoNet-ACE</a> ID and password.
 
 ## Usage
 HTTP request              | Description
