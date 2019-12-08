@@ -28,6 +28,7 @@ jobs:
     - name: Test
       run: |
         pwd
+        ls -la
         touch ./scheduler/local_settings.py
         python ./scheduler/generate_secretkey_setting.py > ./scheduler/local_settings.py
         pipenv run python manage.py test
