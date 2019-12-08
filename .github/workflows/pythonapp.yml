@@ -27,5 +27,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test
       run: |
+        touch scheduler/local_settings.py
         python scheduler/generate_secretkey_setting.py > scheduler/local_settings.py
         pipenv run python manage.py test
