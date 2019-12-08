@@ -131,6 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# SECRET_KEY importation
 try:
     from .local_settings import *
 except ImportError:
