@@ -18,6 +18,13 @@ from django.urls import include, path
 from rest_framework import routers
 from app_scheduler import views
 
+# Django REST framework simple JWT
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+    TokenVerifyView
+)
+
 # Django Rest Framework routers
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -26,4 +33,7 @@ router.register(r'organizations', views.OrganizationViewSet)
 urlpatterns = [
     path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
+    path('api/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

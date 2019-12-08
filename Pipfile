@@ -16,6 +16,8 @@ selenium = "*"
 django-bootstrap4 = "*"
 chromedriver-binary = "==78.0.3904.70.0"
 lxml = "*"
+djangorestframework-simplejwt = "*"
+django-allauth = "*"
 
 [requires]
 python_version = "3.8"
