@@ -28,5 +28,5 @@ jobs:
     - name: Test
       run: |
         touch scheduler/local_settings.py
-        python scheduler/get_random_secret_key.py > ./scheduler/local_settings.py
+        pipenv run python scheduler/get_random_secret_key.py > ./scheduler/local_settings.py
         pipenv run python manage.py test
