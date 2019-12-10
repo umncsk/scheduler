@@ -1,21 +1,17 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
-class Organization(models.Model):
-    organization_id = models.CharField(max_length=256, primary_key=True)
-    schedule        = models.CharField(max_length=256, null=True)
-
-    def __str__(self):
-        return self.organization_id
+class Group(models.Model):
+    group_id = models.CharField(max_length=256, primary_key=True)
+    schedule = models.CharField(
+        max_length=256, default='000000000000000000000000000000000000000000000000')
 
 
-class User(models.Model):
-    # Referencing a foreign key from the Organization class
-    organization  = models.ForeignKey(Organization, to_field='organization_id', on_delete=models.SET_NULL, null=True)
-    student_id    = models.CharField(max_length=14, null=False, primary_key=True)
-    username      = models.CharField(max_length=256, null=False)
-    password      = models.CharField(max_length=256, null=False)
-    schedule      = models.CharField(max_length=256, null=True)
+class User(AbstractUser):
+    username = models.CharField(max_length=256, unique=True)
+    student_id = models.CharField(max_length=14)
+    schedule = models.CharField(max_length=256)
+    group_id = models.CharField(max_length=256)
 
-    def __str__(self):
-        return self.student_id
+    USERNAME_FIELD = 'username'

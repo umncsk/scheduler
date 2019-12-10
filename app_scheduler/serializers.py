@@ -1,42 +1,55 @@
 from rest_framework import serializers
-from app_scheduler.models import User, Organization
+from app_scheduler.models import User, Group
 from django.contrib.auth.hashers import make_password
 
 from app_scheduler.scraping import get_user_schedule
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
+
     class Meta:
         model = User
-        fields = ['username', 'student_id', 'password', 'organization']
-        write_only_fields = ['password']
+        fields = ['username', 'student_id', 'password', 'group_id']
+        extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
-        student_id = validated_data.get('student_id')
-        password = validated_data.get('password')
-        user_schedule = get_user_schedule(student_id, password)
-        validated_data['password'] = make_password(password)
-        validated_data['schedule'] = user_schedule
+        #student_id = validated_data.get('student_id')
+        #password = validated_data.get('password')
+        user_schedule = get_user_schedule(validated_data['student_id'], validated_data['password'])
+        #validated_data['password'] = make_password(password)
+        #validated_data['schedule'] = user_schedule
+
+        user = User(
+            username=validated_data['username'],
+            student_id=validated_data['student_id'],
+            schedule=user_schedule,
+        )
+        user.set_password(validated_data['password'])
+        user.save()
 
         # Add student lecture data to group
-        organization = Organization.objects.get(organization_id=validated_data.get('organization'))
-        organization_schedule = organization.schedule
+        group = Group.objects.get(group_id=validated_data.get('group_id'))
+        group_schedule = group.schedule
         data = ""
-        for i,j in zip(user_schedule, organization_schedule):
+        for i,j in zip(user_schedule, group_schedule):
             data += str(int(i) + int(j))
-        organization.schedule = data
-        organization.save()
+        group.schedule = data
+        group.save()
         # print(organization_schedule)
 
-        return User.objects.create(**validated_data)
+        return user
 
-
-class OrganizationSerializer(serializers.HyperlinkedModelSerializer):
+class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Organization
+        model = Group
         # touple of fields you want to output
-        fields = ['organization_id']
+        fields = ['group_id']
 
     def create(self, validated_data):
-        user = User.objects.get(organization_id=validated_data['organization_id'])
-        print(user.organization_id)
+        group = Group(
+            group_id=validated_data['group_id'],
+        )
+
+        group.save()
+
+        return group
