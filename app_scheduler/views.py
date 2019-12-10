@@ -8,9 +8,8 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets
 # from rest_framework.parsers import JSONParser
-from app_scheduler.models import User, Organization
-from app_scheduler.serializers import UserSerializer, OrganizationSerializer
-
+from app_scheduler.models import User, Group
+from app_scheduler.serializers import UserSerializer, GroupSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     # API endpoint that allows users to be viewed or edited.
@@ -19,6 +18,6 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 
-class OrganizationViewSet(viewsets.ModelViewSet):
-    queryset = Organization.objects.all()
-    serializer_class = OrganizationSerializer
+class GroupViewSet(viewsets.ModelViewSet):
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
