@@ -20,6 +20,7 @@ django-allauth = "*"
 django-rest-auth = "*"
 djangorestframework-jwt = "*"
 django-cors-headers = "*"
+coreapi = "*"
 
 [requires]
 python_version = "3.8"

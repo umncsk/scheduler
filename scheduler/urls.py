@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
+from rest_framework.documentation import include_docs_urls
 from app_scheduler import views
 
 # Django Rest Framework routers
@@ -26,6 +27,7 @@ router.register(r'groups', views.GroupViewSet)
 urlpatterns = [
     path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
+    path('docs/', include_docs_urls()),
     path('rest-auth/', include('rest_auth.urls')),
     path('rest-auth/registration/', include('rest_auth.registration.urls')),
 ]
