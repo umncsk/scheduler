@@ -8,7 +8,8 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = User
-        fields = ['username', 'student_id', 'password', 'groupname']
+        # fields = ['username', 'student_id', 'password', 'groupname']
+        fields = ['username', 'student_id', 'password']
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
@@ -21,6 +22,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
 
+        """
         # Add student lecture data to group
         group = Group.objects.get(groupname=validated_data.get('groupname'))
         group_schedule = group.schedule
@@ -30,6 +32,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         group.schedule = data
         group.save()
         # print(organization_schedule)
+        """
 
         return user
 

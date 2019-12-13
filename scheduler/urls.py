@@ -22,7 +22,7 @@ from app_scheduler import views
 # Django Rest Framework routers
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
+# router.register(r'groups', views.GroupViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
